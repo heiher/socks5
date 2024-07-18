@@ -1,0 +1,11 @@
+A simple and lightweight socks5 server for Android.
+
+<h2>Features</h2>
+
+<ul>
+<li>IPv4/IPv6. (dual stack)</li>
+<li>Standard `CONNECT` command.</li>
+<li>Standard `UDP ASSOCIATE` command.</li>
+<li>Extended `FWD UDP` command. (UDP in TCP)</li>
+<li>Multiple username/password authentication.</li>
+</ul>

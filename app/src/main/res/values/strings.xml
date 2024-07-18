@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Socks5</string>
+	<string name="workers">Workers:</string>
+	<string name="listen_addr">Listen Address:</string>
+	<string name="listen_port">Listen Port:</string>
+	<string name="udp_listen_addr">UDP Listen Address: (Optional)</string>
+	<string name="udp_listen_port">UDP Listen Port:</string>
+	<string name="bind_addr">Bind Address:</string>
+	<string name="bind_iface">Bind Interface:</string>
+	<string name="auth_user">Auth Username: (Optional)</string>
+	<string name="auth_pass">Auth Password: (Optional)</string>
+	<string name="listen_ipv6_only">Listen IPv6 only</string>
+	<string name="save">Save</string>
+	<string name="control_start">Start</string>
+	<string name="control_stop">Stop</string>
+</resources>

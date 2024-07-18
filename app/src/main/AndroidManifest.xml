@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		package="hev.socks5"
+		xmlns:tools="http://schemas.android.com/tools">
+	<application android:label="@string/app_name" android:theme="@android:style/Theme.Holo">
+		<service android:name=".Socks5Service" android:process=":native"
+				android:exported="true" android:foregroundServiceType="specialUse">
+			<property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+				android:value="Net service"/>
+		</service>
+		<receiver android:enabled="true" android:name=".ServiceReceiver"
+			android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED"/>
+			</intent-filter>
+		</receiver>
+		<activity android:name=".MainActivity" android:label="@string/app_name"
+				android:excludeFromRecents="true" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+	</application>
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+		android:minSdkVersion="34" />
+</manifest>
