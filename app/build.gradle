@@ -17,7 +17,8 @@ android {
 		}
 		externalNativeBuild {
 			ndkBuild {
-				arguments "LOCAL_LDFLAGS+=-Wl,--build-id=none"
+				arguments "APP_CFLAGS+=-DPKGNAME=hev/socks5 -ffile-prefix-map=${rootDir}=."
+				arguments "APP_LDFLAGS+=-Wl,--build-id=none"
 			}
 		}
 	}
