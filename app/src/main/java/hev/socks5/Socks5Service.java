@@ -87,7 +87,8 @@ public class Socks5Service extends Service {
 				"  udp-port: " + prefs.getUDPListenPort() + "\n" +
 				"  udp-listen-address: '" + prefs.getUDPListenAddress() + "'\n" +
 				"  listen-ipv6-only: " + prefs.getListenIPv6Only() + "\n" +
-				"  bind-address: '" + prefs.getBindAddress() + "'\n" +
+				"  bind-address-v4: '" + prefs.getBindIPv4Address() + "'\n" +
+				"  bind-address-v6: '" + prefs.getBindIPv6Address() + "'\n" +
 				"  bind-interface: '" + prefs.getBindInterface() + "'\n";
 
 			conf += "misc:\n" +

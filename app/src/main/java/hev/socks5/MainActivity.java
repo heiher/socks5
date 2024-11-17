@@ -26,7 +26,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private EditText edittext_listen_port;
 	private EditText edittext_udp_listen_addr;
 	private EditText edittext_udp_listen_port;
-	private EditText edittext_bind_addr;
+	private EditText edittext_bind_ipv4_addr;
+	private EditText edittext_bind_ipv6_addr;
 	private EditText edittext_bind_iface;
 	private EditText edittext_auth_user;
 	private EditText edittext_auth_pass;
@@ -46,7 +47,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		edittext_listen_port = (EditText) findViewById(R.id.listen_port);
 		edittext_udp_listen_addr = (EditText) findViewById(R.id.udp_listen_addr);
 		edittext_udp_listen_port = (EditText) findViewById(R.id.udp_listen_port);
-		edittext_bind_addr = (EditText) findViewById(R.id.bind_addr);
+		edittext_bind_ipv4_addr = (EditText) findViewById(R.id.bind_ipv4_addr);
+		edittext_bind_ipv6_addr = (EditText) findViewById(R.id.bind_ipv6_addr);
 		edittext_bind_iface = (EditText) findViewById(R.id.bind_iface);
 		edittext_auth_user = (EditText) findViewById(R.id.auth_user);
 		edittext_auth_pass = (EditText) findViewById(R.id.auth_pass);
@@ -85,7 +87,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		edittext_listen_port.setText(Integer.toString(prefs.getListenPort()));
 		edittext_udp_listen_addr.setText(prefs.getUDPListenAddress());
 		edittext_udp_listen_port.setText(Integer.toString(prefs.getUDPListenPort()));
-		edittext_bind_addr.setText(prefs.getBindAddress());
+		edittext_bind_ipv4_addr.setText(prefs.getBindIPv4Address());
+		edittext_bind_ipv6_addr.setText(prefs.getBindIPv6Address());
 		edittext_bind_iface.setText(prefs.getBindInterface());
 		edittext_auth_user.setText(prefs.getAuthUsername());
 		edittext_auth_pass.setText(prefs.getAuthPassword());
@@ -97,7 +100,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		edittext_listen_port.setEnabled(editable);
 		edittext_udp_listen_addr.setEnabled(editable);
 		edittext_udp_listen_port.setEnabled(editable);
-		edittext_bind_addr.setEnabled(editable);
+		edittext_bind_ipv4_addr.setEnabled(editable);
+		edittext_bind_ipv6_addr.setEnabled(editable);
 		edittext_bind_iface.setEnabled(editable);
 		edittext_auth_user.setEnabled(editable);
 		edittext_auth_pass.setEnabled(editable);
@@ -116,7 +120,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		prefs.setListenPort(Integer.parseInt(edittext_listen_port.getText().toString()));
 		prefs.setUDPListenAddress(edittext_udp_listen_addr.getText().toString());
 		prefs.setUDPListenPort(Integer.parseInt(edittext_udp_listen_port.getText().toString()));
-		prefs.setBindAddress(edittext_bind_addr.getText().toString());
+		prefs.setBindIPv4Address(edittext_bind_ipv4_addr.getText().toString());
+		prefs.setBindIPv6Address(edittext_bind_ipv6_addr.getText().toString());
 		prefs.setBindInterface(edittext_bind_iface.getText().toString());
 		prefs.setAuthUsername(edittext_auth_user.getText().toString());
 		prefs.setAuthPassword(edittext_auth_pass.getText().toString());

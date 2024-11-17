@@ -6,7 +6,8 @@
 	<string name="listen_port">Listen Port:</string>
 	<string name="udp_listen_addr">UDP Listen Address: (Optional)</string>
 	<string name="udp_listen_port">UDP Listen Port:</string>
-	<string name="bind_addr">Bind Address:</string>
+	<string name="bind_ipv4_addr">Bind IPv4 Address:</string>
+	<string name="bind_ipv6_addr">Bind IPv6 Address:</string>
 	<string name="bind_iface">Bind Interface:</string>
 	<string name="auth_user">Auth Username: (Optional)</string>
 	<string name="auth_pass">Auth Password: (Optional)</string>

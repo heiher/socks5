@@ -22,7 +22,8 @@ public class Preferences
 	public static final String LISTEN_PORT = "ListenPort";
 	public static final String UDP_LISTEN_ADDR = "UDPListenAddr";
 	public static final String UDP_LISTEN_PORT = "UDPListenPort";
-	public static final String BIND_ADDR = "BindAddr";
+	public static final String BIND_IPV4_ADDR = "BindIPv4Addr";
+	public static final String BIND_IPV6_ADDR = "BindIPv6Addr";
 	public static final String BIND_IFACE = "BindIface";
 	public static final String AUTH_USER = "AuthUser";
 	public static final String AUTH_PASS = "AuthPass";
@@ -85,13 +86,23 @@ public class Preferences
 		editor.commit();
 	}
 
-	public String getBindAddress() {
-		return prefs.getString(BIND_ADDR, "::");
+	public String getBindIPv4Address() {
+		return prefs.getString(BIND_IPV4_ADDR, "0.0.0.0");
 	}
 
-	public void setBindAddress(String addr) {
+	public void setBindIPv4Address(String addr) {
 		SharedPreferences.Editor editor = prefs.edit();
-		editor.putString(BIND_ADDR, addr);
+		editor.putString(BIND_IPV4_ADDR, addr);
+		editor.commit();
+	}
+
+	public String getBindIPv6Address() {
+		return prefs.getString(BIND_IPV6_ADDR, "::");
+	}
+
+	public void setBindIPv6Address(String addr) {
+		SharedPreferences.Editor editor = prefs.edit();
+		editor.putString(BIND_IPV6_ADDR, addr);
 		editor.commit();
 	}
 
