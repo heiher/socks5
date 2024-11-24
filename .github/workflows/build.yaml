@@ -32,12 +32,18 @@ jobs:
           export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
           yes | sdk/cmdline-tools/bin/sdkmanager --sdk_root=`pwd`/sdk --licenses
           ./gradlew assembleRelease
-          cp app/build/outputs/apk/release/hev.socks5-*-release.apk hev.socks5-${{ github.ref_name }}-release.apk
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            ref_name="pr-${{ github.event.pull_request.number }}"
+          else
+            ref_name="${{ github.ref_name }}"
+          fi
+          echo "ref_name=${ref_name}" >> $GITHUB_ENV
+          cp app/build/outputs/apk/release/hev.socks5-*-release.apk hev.socks5-${ref_name}-release.apk
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: hev.socks5-${{ github.ref_name }}-release.apk
-          path: hev.socks5-${{ github.ref_name }}-release.apk
+          name: hev.socks5-${{ env.ref_name }}-release.apk
+          path: hev.socks5-${{ env.ref_name }}-release.apk
           if-no-files-found: error
           retention-days: 1
 
