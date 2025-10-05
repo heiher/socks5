@@ -76,13 +76,13 @@ public class Preferences
 		editor.commit();
 	}
 
-	public int getUDPListenPort() {
-		return prefs.getInt(UDP_LISTEN_PORT, 1080);
+	public String getUDPListenPort() {
+		return prefs.getString(UDP_LISTEN_PORT, "0");
 	}
 
-	public void setUDPListenPort(int port) {
+	public void setUDPListenPort(String port) {
 		SharedPreferences.Editor editor = prefs.edit();
-		editor.putInt(UDP_LISTEN_PORT, port);
+		editor.putString(UDP_LISTEN_PORT, port);
 		editor.commit();
 	}
 

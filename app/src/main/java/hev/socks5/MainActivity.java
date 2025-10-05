@@ -86,7 +86,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		edittext_listen_addr.setText(prefs.getListenAddress());
 		edittext_listen_port.setText(Integer.toString(prefs.getListenPort()));
 		edittext_udp_listen_addr.setText(prefs.getUDPListenAddress());
-		edittext_udp_listen_port.setText(Integer.toString(prefs.getUDPListenPort()));
+		edittext_udp_listen_port.setText(prefs.getUDPListenPort());
 		edittext_bind_ipv4_addr.setText(prefs.getBindIPv4Address());
 		edittext_bind_ipv6_addr.setText(prefs.getBindIPv6Address());
 		edittext_bind_iface.setText(prefs.getBindInterface());
@@ -119,7 +119,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		prefs.setListenAddress(edittext_listen_addr.getText().toString());
 		prefs.setListenPort(Integer.parseInt(edittext_listen_port.getText().toString()));
 		prefs.setUDPListenAddress(edittext_udp_listen_addr.getText().toString());
-		prefs.setUDPListenPort(Integer.parseInt(edittext_udp_listen_port.getText().toString()));
+		prefs.setUDPListenPort(edittext_udp_listen_port.getText().toString());
 		prefs.setBindIPv4Address(edittext_bind_ipv4_addr.getText().toString());
 		prefs.setBindIPv6Address(edittext_bind_ipv6_addr.getText().toString());
 		prefs.setBindInterface(edittext_bind_iface.getText().toString());

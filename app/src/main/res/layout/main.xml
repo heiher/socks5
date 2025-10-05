@@ -64,8 +64,7 @@
 			android:id="@+id/udp_listen_port"
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:singleLine="true"
-			android:inputType="number"/>
+			android:singleLine="true"/>
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
