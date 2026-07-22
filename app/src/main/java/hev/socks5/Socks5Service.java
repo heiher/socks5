@@ -30,8 +30,9 @@ import android.content.pm.ServiceInfo;
 import androidx.core.app.NotificationCompat;
 
 public class Socks5Service extends Service {
-	private static native void Socks5StartService(String config_path);
-	private static native void Socks5StopService();
+	private static native boolean Socks5StartService(String config_path);
+	private static native boolean Socks5StopService();
+	private static native boolean Socks5IsRunning();
 
 	public static final String ACTION_START = "hev.socks5.START";
 	public static final String ACTION_STOP = "hev.socks5.STOP";
